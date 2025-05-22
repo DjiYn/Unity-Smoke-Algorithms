@@ -5,7 +5,7 @@ Shader "Hidden/CompositeEffects" {
     }
     
     SubShader {
-        CGINCLUDE
+        HLSLINCLUDE
         #include "UnityCG.cginc"
         #include "UnityStandardBRDF.cginc"
 
@@ -32,10 +32,10 @@ Shader "Hidden/CompositeEffects" {
             o.uv = v.uv;
             return o;
         }
-        ENDCG
+        ENDHLSL
 
         Pass {
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vp
             #pragma fragment fp
 
@@ -43,12 +43,12 @@ Shader "Hidden/CompositeEffects" {
                 return _CameraDepthTexture.Sample(point_clamp_sampler, i.uv).r;
             }
 
-            ENDCG
+            ENDHLSL 
         }
 
         // 9-Tap Catmull-Rom filtering from: https://gist.github.com/TheRealMJP/c83b8c0f46b63f3a88a5986f4fa982b1
         Pass {
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vp
             #pragma fragment fp
 
@@ -90,11 +90,11 @@ Shader "Hidden/CompositeEffects" {
                 return result;
             }
 
-            ENDCG
+            ENDHLSL 
         }
 
         Pass {
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vp
             #pragma fragment fp
 
@@ -134,7 +134,7 @@ Shader "Hidden/CompositeEffects" {
                 return float4(1, 0, 1, 0);
             }
 
-            ENDCG
+            ENDHLSL 
         }
     }
 }

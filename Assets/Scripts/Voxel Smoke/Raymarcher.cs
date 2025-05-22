@@ -215,7 +215,7 @@ public class Raymarcher : MonoBehaviour {
         depthTex.enableRandomWrite = true;
         depthTex.Create();
 
-        cam = GetComponent<Camera>();
+        cam = Camera.main;
         sun = GameObject.Find("Directional Light");
     }
 

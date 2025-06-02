@@ -26,7 +26,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ebcb263fccad594cac47a018bfb6e42, type: 3}
   m_Name: RaymarchFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   globalRenderData: {fileID: 11400000, guid: 4dc6b23f1e0fde84681f4d58b3259dee, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
